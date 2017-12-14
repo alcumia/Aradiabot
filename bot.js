@@ -18,14 +18,10 @@ var admin_roleID = '351594043337342978';
 
 client.on('message', message => {
     // If they post in #comment-box, and they AREN'T an admin.
+	//if (channelID == comment_box_cID && !(message.author.hasRole(admin_roleID))) {
 	if (message.channel.id === comment_box_cID) {
-    //if (channelID == comment_box_cID && !(message.author.hasRole(admin_roleID))) {
-        var new_message = message.author.username+" submitted the following comment:\n"+message.content;
-       
-        client.send(new_message, {
-                    to: comment_box_sub_cID
-        });
-		
+        	var new_message = message.author.username+" submitted the following comment:\n"+message.content;
+		client.channels.get(comment_box_sub_cID).sendMessage(new_message);		
 		message.delete();
      }
 });
