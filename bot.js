@@ -1,22 +1,18 @@
-var Discord = require('discord.io');
-var logger = require('winston');
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(logger.transports.Console, {
-    colorize: true
-});
-logger.level = 'debug';
-// Initialize Discord Bot
-var bot = new Discord.Client({
-   token: 'MzkwNzExMzA0MzU4NDYxNDQw.DROF2Q.39YMEd6WK6XGnsXnebc3CjETFG4',
-   autorun: true
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+    console.log('I am ready!');
 });
 
-bot.on('ready', function (evt) {
-    logger.info('Connected');
-    logger.info('Logged in as: ');
-    logger.info(bot.username + ' - (' + bot.id + ')');
+client.on('message', message => {
+    if (message.content === 'ping') {
+    	message.reply('pong');
+  	}
 });
+
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);
 
 var comment_box_cID = '390709196795936788';
 var comment_box_sub_cID = '390717626420166669';
