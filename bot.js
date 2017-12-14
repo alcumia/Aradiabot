@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-    console.log('I am ready!');
+    console.log('aradiab0t 0nline 0u0');
 });
 
 client.on('message', message => {
@@ -18,8 +18,8 @@ var comment_box_cID = '390709196795936788';
 var comment_box_sub_cID = '390717626420166669';
 
 var admin_roleID = '351594043337342978';
-/*
-bot.on('message', function (user, userID, channelID, message, evt) {
+
+client.on('message', function (user, userID, channelID, message, evt) {
     // If they post in #comment-box, and they AREN'T an admin.
 	if (channelID === comment_box_cID) {
     //if (channelID == comment_box_cID && !(message.author.hasRole(admin_roleID))) {
