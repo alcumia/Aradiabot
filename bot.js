@@ -20,7 +20,7 @@ client.on('message', message => {
     // If they post in #comment-box, and they AREN'T an admin.
 	//if (channelID == comment_box_cID && !(message.author.hasRole(admin_roleID))) {
 	if (message.channel.id === comment_box_cID) {
-        	var new_message = '@'+message.author.tag+" submitted the following comment:\n"+message.content;
+        	var new_message = '@'+message.member.nickname+" submitted the following comment:\n"+message.content;
 		client.channels.get(comment_box_sub_cID).sendMessage(new_message);		
 		message.delete();
      }
