@@ -5,12 +5,6 @@ client.on('ready', () => {
     console.log('aradiab0t 0nline 0u0');
 });
 
-client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.reply('pong');
-  	}
-});
-
 var comment_box_cID = '390709196795936788';
 var comment_box_sub_cID = '390717626420166669';
 
